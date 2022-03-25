@@ -1,0 +1,9 @@
+{
+	"name": "npadftest",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f05eaa8b-e1c2-4e74-8280-21cdcbdec62d",
+		"tenantId": "aed6a845-51fa-475c-bfa3-0aeafb0603b3"
+	}
+}

@@ -2,7 +2,7 @@
 	"name": "OutputDataset",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "dept.txt",
 				"folderPath": "output",
 				"container": "adftutorial"
 			}

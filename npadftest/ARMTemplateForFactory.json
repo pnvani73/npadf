@@ -39,9 +39,7 @@
 								"type": "BinarySource",
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "adftutorial/input",
-									"wildcardFileName": "*.txt",
+									"fileListPath": "adftutorial/input",
 									"deleteFilesAfterCompletion": false
 								},
 								"formatSettings": {

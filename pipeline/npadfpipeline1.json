@@ -9,7 +9,7 @@
 				"policy": {
 					"timeout": "",
 					"retry": 0,
-					"retryIntervalInSeconds": null,
+					"retryIntervalInSeconds": 0,
 					"secureOutput": false,
 					"secureInput": false
 				},

@@ -87,6 +87,29 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Binary1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "output",
+						"container": "adftutorial"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/npadfpipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -109,7 +132,9 @@
 								"type": "BinarySource",
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
-									"fileListPath": "adftutorial/input",
+									"recursive": true,
+									"wildcardFolderPath": "adftutorial/input",
+									"wildcardFileName": "*.txt",
 									"deleteFilesAfterCompletion": false
 								},
 								"formatSettings": {
@@ -133,7 +158,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "OutputDataset",
+								"referenceName": "Binary1",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -149,7 +174,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/InputDataset')]",
-				"[concat(variables('factoryId'), '/datasets/OutputDataset')]"
+				"[concat(variables('factoryId'), '/datasets/Binary1')]"
 			]
 		}
 	]

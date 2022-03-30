@@ -19,7 +19,9 @@
 						"type": "BinarySource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "adftutorial/input",
+							"recursive": true,
+							"wildcardFolderPath": "adftutorial/input",
+							"wildcardFileName": "*.txt",
 							"deleteFilesAfterCompletion": false
 						},
 						"formatSettings": {
@@ -42,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "OutputDataset",
+						"referenceName": "Binary1",
 						"type": "DatasetReference"
 					}
 				]

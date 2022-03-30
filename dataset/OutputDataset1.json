@@ -1,5 +1,5 @@
 {
-	"name": "InputDataset",
+	"name": "OutputDataset1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -10,10 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "input",
+				"folderPath": "output",
 				"container": "adftutorial"
 			}
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
